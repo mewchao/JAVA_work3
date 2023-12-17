@@ -5,17 +5,19 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.joda.time.DateTime;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order {
     private int id_order;
     private int nums_good;
-    private double price;
+    private double prices_order;
 
-    private DateTime time_order;
+    private Date time_order;
 
-    private DateTime gmt_create;
+    private Date gmt_create;
 
-    private DateTime gmt_modified;
+    private Date gmt_modified;
 }

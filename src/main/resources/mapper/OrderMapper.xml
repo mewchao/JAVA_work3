@@ -9,4 +9,24 @@
         select * from order_project
     </select>
 
+    <insert id="insertOrder" parameterType="com.example.pojo.Order">
+        insert into order_project (id_order,nums_good,prices_order,time_order,gmt_create,gmt_modified)
+        values (#{id_order},#{nums_good},#{prices_order},#{time_order},#{gmt_create},#{gmt_modified})
+    </insert>
+
+    <delete id="deleteOrder" parameterType="int">
+        DELETE FROM order_project WHERE id_order = #{id_order}
+    </delete>
+
+    <update id="updateOrder" parameterType="com.example.pojo.Order">
+        UPDATE order_project
+        SET
+            nums_good = #{nums_good},
+            prices_order = #{prices_order},
+            time_order = #{time_order},
+            gmt_create = #{gmt_create},
+            gmt_modified = #{gmt_modified}
+        WHERE id_order = #{id_order}
+    </update>
+
 </mapper>

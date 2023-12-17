@@ -11,8 +11,22 @@
 
 
     <insert id="insertGood" parameterType="com.example.pojo.Good">
-        insert into good_table(ul_id_goods,price_goods,name_goods,gmt_create,gmt_modified)
-            values(#{ul_id_goods},#{price_goods},#{name_goods},#{name_goods},#{gmt_modified})
+        insert into good_table (uk_id_goods,price_goods,name_goods,gmt_create,gmt_modified)
+            values (#{uk_id_goods},#{price_goods},#{name_goods},#{gmt_create},#{gmt_modified})
     </insert>
+
+    <delete id="deleteGood" parameterType="int">
+        DELETE FROM good_table WHERE uk_id_goods = #{uk_id_goods}
+    </delete>
+
+    <update id="updateGood" parameterType="com.example.pojo.Good">
+        UPDATE good_table
+        SET
+            price_goods = #{price_goods},
+            name_goods = #{name_goods},
+            gmt_create = #{gmt_create},
+            gmt_modified = #{gmt_modified}
+        WHERE uk_id_goods = #{uk_id_goods}
+    </update>
 
 </mapper>
